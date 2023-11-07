@@ -62,9 +62,9 @@
                 "bundleName": "dspace-theme"
               },
               {
-                "input": "src/themes/theme_uea/styles/theme.scss",
+                "input": "src/themes/uea/styles/theme.scss",
                 "inject": false,
-                "bundleName": "theme_uea-theme"
+                "bundleName": "uea-theme"
               }
             ],
             "scripts": [],
