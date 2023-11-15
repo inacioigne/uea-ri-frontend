@@ -13,6 +13,14 @@ version: '3.7'
 networks:
   dspacenet:
 services:
+  dspace-nginx:
+    container_name: dspace-nginx
+    image: nginx:latest
+    networks:
+      dspacenet:
+    ports:
+      - "80:80"
+
   dspace-angular:
     container_name: dspace-angular
     environment:
