@@ -21,6 +21,8 @@ services:
       - ./nginx/ri_uea.conf:/etc/nginx/conf.d/ri_uea.conf
     networks:
       dspacenet:
+    depends_on:
+      - dspace-angular
     ports:
       - "80:80"
 
