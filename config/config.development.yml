@@ -16,7 +16,7 @@ ui:
     windowMs: 60000 # 1 minute
     max: 500 # limit each IP to 500 requests per windowMs
   # Trust X-FORWARDED-* headers from proxies (default = true)
-  useProxies: true
+  # useProxies: true
 
 # Theme Config
 themes:
