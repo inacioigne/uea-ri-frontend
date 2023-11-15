@@ -16,6 +16,8 @@ services:
   dspace-nginx:
     container_name: dspace-nginx
     image: nginx:latest
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
     networks:
       dspacenet:
     ports:
