@@ -1,7 +1,8 @@
 rest:
   ssl: false
-  host: 45.178.183.5
-  port: 8080
+  # host: 45.178.183.5
+  host: vreli.com.br
+  port: 80
   nameSpace: /server
 
 ui:
