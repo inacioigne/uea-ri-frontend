@@ -7,6 +7,7 @@ FROM node:18-alpine
 # These are needed to install some node modules, especially on linux/arm64
 RUN apk add --update python3 make g++ && rm -rf /var/cache/apk/*
 
+
 WORKDIR /app
 ADD . /app/
 EXPOSE 4000
