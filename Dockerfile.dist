@@ -10,13 +10,7 @@ FROM node:18-alpine as build
 # These are needed to install some node modules, especially on linux/arm64
 RUN apk add --update python3 make g++ && rm -rf /var/cache/apk/*
 
-# Configurações do Nginx
-RUN apk add openrc
-RUN mkdir /run/openrc && touch /run/openrc/softlevel
-RUN rc-status
 
-RUN apk add nginx
-RUN rc-update add nginx
 
 WORKDIR /app
 COPY package.json yarn.lock ./
@@ -27,6 +21,14 @@ RUN yarn build:prod
 
 FROM node:18-alpine
 RUN npm install --global pm2
+
+# Configurações do Nginx
+RUN apk add openrc
+RUN mkdir /run/openrc && touch /run/openrc/softlevel
+RUN rc-status
+
+RUN apk add nginx
+RUN rc-update add nginx
 
 COPY --chown=node:node --from=build /app/dist /app/dist
 COPY --chown=node:node config /app/config
