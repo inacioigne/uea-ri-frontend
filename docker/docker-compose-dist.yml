@@ -30,7 +30,7 @@ services:
     image: dspace/dspace-angular:dspace-7_x-dist
     volumes:
       - ./docker/nginx/ri_uea.conf:/etc/nginx/http.d/ri_uea.conf
-      - ./docker/nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./docker/nginx/nginx.conf:/etc/nginx/tmp-nginx.conf
     build:
       context: ..
       dockerfile: Dockerfile.dist
