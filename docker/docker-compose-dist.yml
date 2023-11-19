@@ -28,8 +28,9 @@ services:
       DSPACE_REST_PORT: 80
       DSPACE_REST_NAMESPACE: /server
     image: dspace/dspace-angular:dspace-7_x-dist
+    working_dir: /app/
     volumes:
-      - ./docker/nginx/:/app/uea-config
+      - ./docker/nginx/:/app/
       # - ./docker/nginx/nginx.conf:/etc/nginx/tmp-nginx.conf
     build:
       context: ..
