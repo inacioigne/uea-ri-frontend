@@ -30,7 +30,7 @@ services:
     image: dspace/dspace-angular:dspace-7_x-dist
     working_dir: /app/
     volumes:
-      - ./docker/nginx/:/app/nginx
+      - /docker/nginx/:/app/nginx
       # - ./docker/nginx/nginx.conf:/etc/nginx/tmp-nginx.conf
     build:
       context: ..
