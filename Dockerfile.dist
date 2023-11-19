@@ -22,14 +22,13 @@ FROM node:18-alpine
 RUN npm install --global pm2
 
 # Configurações do Nginx
-RUN apk add openrc
-RUN mkdir /run/openrc && touch /run/openrc/softlevel
-RUN rc-status
+# RUN apk add openrc
+# RUN mkdir /run/openrc && touch /run/openrc/softlevel
+# RUN rc-status
 
-RUN apk add nginx
-RUN rc-update add nginx
-COPY --chown=node:node docker/nginx/ /app/nginx
-
+# RUN apk add nginx
+# RUN rc-update add nginx
+# COPY --chown=node:node docker/nginx/ /app/nginx
 
 COPY --chown=node:node --from=build /app/dist /app/dist
 COPY --chown=node:node config /app/config
