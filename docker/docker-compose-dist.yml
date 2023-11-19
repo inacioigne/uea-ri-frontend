@@ -15,9 +15,9 @@ services:
   dspace-nginx:
     container_name: dspace-nginx
     image: nginx:latest
-    volumes:
-      - ./docker/nginx/nginx.conf:/etc/nginx/nginx.conf
-      - ./docker/nginx/ri_uea.conf:/etc/nginx/conf.d/ri_uea.conf
+    # volumes:
+    #   - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+    #   - ./nginx/ri_uea.conf:/etc/nginx/conf.d/ri_uea.conf
     networks:
       dspacenet:
     depends_on:
