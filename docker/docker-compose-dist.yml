@@ -29,7 +29,7 @@ services:
       DSPACE_REST_NAMESPACE: /server
     image: dspace/dspace-angular:dspace-7_x-dist
     volumes:
-      - ./docker/nginx/:./uea-config
+      - ./docker/nginx/:/uea-config
       # - ./docker/nginx/nginx.conf:/etc/nginx/tmp-nginx.conf
     build:
       context: ..
