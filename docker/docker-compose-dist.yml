@@ -39,9 +39,11 @@ services:
       dspacenet:
     ports:
       - 80:80
+      - 4000:4000
     # - published: 4000
     #   target: 4000
     expose:
       - 80
+      - 4000
     stdin_open: true
     tty: true
