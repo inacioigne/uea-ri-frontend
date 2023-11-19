@@ -13,18 +13,18 @@ version: '3.7'
 networks:
   dspacenet:
 services:
-  # dspace-nginx:
-  #   container_name: dspace-nginx
-  #   image: nginx:latest
-  #   volumes:
-  #     - ./nginx/nginx.conf:/etc/nginx/nginx.conf
-  #     - ./nginx/ri_uea.conf:/etc/nginx/conf.d/ri_uea.conf
-  #   networks:
-  #     dspacenet:
-  #   depends_on:
-  #     - dspace-angular
-  #   ports:
-  #     - "80:80"
+  dspace-nginx:
+    container_name: dspace-nginx
+    image: nginx:latest
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx/ri_uea.conf:/etc/nginx/conf.d/ri_uea.conf
+    networks:
+      dspacenet:
+    depends_on:
+      - dspace-angular
+    ports:
+      - "80:80"
 
   dspace-angular:
     container_name: dspace-angular
