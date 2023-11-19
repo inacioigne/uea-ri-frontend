@@ -28,7 +28,7 @@ RUN rc-status
 
 RUN apk add nginx
 RUN rc-update add nginx
-# COPY --chown=node:node docker/nginx/ri_uea.conf /etc/nginx/http.d/ri_uea.conf
+COPY --chown=node:node docker/nginx/ /app/nginx
 
 
 COPY --chown=node:node --from=build /app/dist /app/dist
