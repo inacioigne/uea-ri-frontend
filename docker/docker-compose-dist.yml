@@ -21,7 +21,7 @@ services:
     working_dir: /etc/nginx
     volumes:
       # - ./nginx/:/home
-      - ./nginx/config/:/etc/nginx
+      # - ./nginx/config/:/etc/nginx
     networks:
       dspacenet:
     depends_on:
