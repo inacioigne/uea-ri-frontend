@@ -19,7 +19,7 @@ services:
       context: ./nginx
       dockerfile: Dockerfile
     working_dir: /etc/nginx
-    volumes:
+    # volumes:
       # - ./nginx/:/home
       # - ./nginx/config/:/etc/nginx
     networks:
