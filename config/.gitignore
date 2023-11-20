@@ -1,3 +1,5 @@
 config.*.yml
 !config.example.yml
 !config.development.yml
+!config.production.yml
+
