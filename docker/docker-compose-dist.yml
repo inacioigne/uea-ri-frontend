@@ -15,16 +15,20 @@ services:
   dspace-nginx:
     container_name: dspace-nginx
     image: nginx:latest
-    working_dir: /home
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+    # working_dir: /home
     volumes:
-      - ./nginx/:/home
-    #   - ./nginx/ri_uea.conf:/etc/nginx/conf.d/ri_uea.conf
+      # - ./nginx/:/home
+      - ./nginx/config/:/etc/nginx
     networks:
       dspacenet:
     depends_on:
       - dspace-angular
     ports:
       - "80:80"
+      
   dspace-angular:
     container_name: dspace-angular
     environment:
@@ -41,10 +45,6 @@ services:
       DSPACE_REST_PORT: 80
       DSPACE_REST_NAMESPACE: /server
     image: dspace/dspace-angular:dspace-7_x-dist
-    # working_dir: /app/nginx
-    # volumes:
-    #   - /docker/nginx/:/app/nginx
-      # - ./docker/nginx/nginx.conf:/etc/nginx/tmp-nginx.conf
     build:
       context: ..
       dockerfile: Dockerfile.dist
