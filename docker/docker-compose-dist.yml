@@ -18,7 +18,7 @@ services:
     build:
       context: ./nginx
       dockerfile: Dockerfile
-    # working_dir: /home
+    working_dir: /etc/nginx
     volumes:
       # - ./nginx/:/home
       - ./nginx/config/:/etc/nginx
@@ -28,7 +28,7 @@ services:
       - dspace-angular
     ports:
       - "80:80"
-      
+
   dspace-angular:
     container_name: dspace-angular
     environment:
