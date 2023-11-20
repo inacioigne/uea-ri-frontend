@@ -48,10 +48,11 @@ services:
     networks:
       dspacenet:
     ports:
-    - published: 4000
-      target: 4000
-    - published: 9876
-      target: 9876
+        - 4000:4000
+    # - published: 4000
+    #   target: 4000
+    # - published: 9876
+    #   target: 9876
     expose:
       - 4000
     stdin_open: true
