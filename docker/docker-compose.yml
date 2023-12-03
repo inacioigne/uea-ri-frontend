@@ -11,7 +11,7 @@
 # for example via 'docker-compose-rest.yml'
 version: '3.7'
 networks:
-  dspacenet:
+  networkuea:
 services:
   dspace-nginx:
       container_name: dspace-nginx
@@ -23,7 +23,7 @@ services:
       volumes:
         - ./nginx/config/:/etc/nginx
       networks:
-        dspacenet:
+        networkuea:
       depends_on:
         - dspace-angular
       ports:
@@ -37,8 +37,8 @@ services:
       DSPACE_UI_PORT: '4000'
       DSPACE_UI_NAMESPACE: /
       DSPACE_REST_SSL: 'false'
-      # DSPACE_REST_HOST: 45.178.183.5
-      DSPACE_REST_HOST: vreli.com.br
+      DSPACE_REST_HOST: dspace-beta.uea.edu.br
+      # DSPACE_REST_HOST: vreli.com.br
       DSPACE_REST_PORT: 80
       DSPACE_REST_NAMESPACE: /server
     image: dspace/dspace-angular:dspace-7_x
@@ -46,7 +46,7 @@ services:
       context: ..
       dockerfile: Dockerfile
     networks:
-      dspacenet:
+      networkuea:
     ports:
         - 4000:4000
     # - published: 4000
