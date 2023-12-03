@@ -3,21 +3,21 @@ version: '3.7'
 networks:
   networkuea:
 services:
-  # dspace-nginx:
-  #     container_name: dspace-nginx
-  #     image: nginx:latest
-  #     build:
-  #       context: ./nginx
-  #       dockerfile: Dockerfile
-  #     working_dir: /etc/nginx
-  #     volumes:
-  #       - ./nginx/config/:/etc/nginx
-  #     networks:
-  #       networkuea:
-  #     depends_on:
-  #       - dspace-angular
-  #     ports:
-  #       - "80:80"
+  dspace-nginx:
+      container_name: dspace-nginx
+      image: nginx:latest
+      build:
+        context: ./nginx
+        dockerfile: Dockerfile
+      working_dir: /etc/nginx
+      volumes:
+        - ./nginx/config/:/etc/nginx
+      networks:
+        networkuea:
+      depends_on:
+        - dspace-angular
+      ports:
+        - "80:80"
 
   dspace-angular:
     container_name: dspace-angular
